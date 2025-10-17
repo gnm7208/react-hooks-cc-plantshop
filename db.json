@@ -43,10 +43,10 @@
       "price": 55
     },
     {
-      "id": "0e83",
-      "name": "",
-      "image": "",
-      "price": null
+      "name": "Mango",
+      "image": "./images/Mango.jpg",
+      "price": "45.55",
+      "id": "5e7Bm44"
     }
   ]
 }
