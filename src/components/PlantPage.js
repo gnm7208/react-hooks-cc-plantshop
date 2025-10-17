@@ -18,16 +18,25 @@ function PlantPage() {
   };
 
   const toggleStock = (id) => {
-    setPlants(plants.map(plant => 
+    setPlants(plants.map(plant =>
       plant.id === id ? { ...plant, inStock: !plant.inStock } : plant
     ));
+  };
+
+  const deletePlant = (id) => {
+    fetch(`http://localhost:6001/plants/${id}`, {
+      method: "DELETE"
+    })
+      .then(() => {
+        setPlants(plants.filter(plant => plant.id !== id));
+      });
   };
 
   return (
     <main>
       <NewPlantForm addPlant={addPlant} />
       <Search setSearchTerm={setSearchTerm} />
-      <PlantList plants={plants} searchTerm={searchTerm} toggleStock={toggleStock} />
+      <PlantList plants={plants} searchTerm={searchTerm} toggleStock={toggleStock} deletePlant={deletePlant} />
     </main>
   );
 }

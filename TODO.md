@@ -6,3 +6,7 @@
 - [x] Edit NewPlantForm.js: Add useState for form data, handle form submit to POST /plants, update plants state on success.
 - [x] Edit Search.js: Receive setSearchTerm as prop, update searchTerm on input change.
 - [x] Test the app: Run npm run server and npm start, verify all features work.
+
+# Advanced Deliverables
+
+- [x] Add delete plant functionality: Add delete button to PlantCard, implement deletePlant in PlantPage to DELETE /plants/:id and update state.
