@@ -1,5 +1,7 @@
+// Header component that displays the app title and logo
 import React from "react";
 
+// Function component for the header section
 function Header() {
   return (
     <header>

@@ -1,5 +1,7 @@
+// Search component for filtering plants by name
 import React from "react";
 
+// Function component for the search bar
 function Search({ setSearchTerm }) {
   return (
     <div className="searchbar">

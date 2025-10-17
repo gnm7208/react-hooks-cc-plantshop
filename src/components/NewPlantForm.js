@@ -1,12 +1,16 @@
+// NewPlantForm component for adding new plants to the list
 import React, { useState } from "react";
 
+// Function component for the new plant form
 function NewPlantForm({ addPlant }) {
+  // State for form data
   const [formData, setFormData] = useState({
     name: "",
     image: "",
     price: ""
   });
 
+  // Handle input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -14,6 +18,7 @@ function NewPlantForm({ addPlant }) {
     });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch("http://localhost:6001/plants", {

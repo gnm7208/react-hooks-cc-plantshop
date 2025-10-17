@@ -1,5 +1,7 @@
+// PlantCard component that displays individual plant information
 import React from "react";
 
+// Function component for a single plant card
 function PlantCard({ plant, toggleStock, deletePlant }) {
   return (
     <li className="card" data-testid="plant-item">
