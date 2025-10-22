@@ -40,11 +40,28 @@ function PlantPage() {
       });
   };
 
+  // Function to update a plant's price on the server and in state
+  const updatePlant = (id, newPrice) => {
+    fetch(`http://localhost:6001/plants/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ price: newPrice })
+    })
+      .then((r) => r.json())
+      .then((updatedPlant) => {
+        setPlants(plants.map(plant =>
+          plant.id === id ? { ...plant, price: updatedPlant.price } : plant
+        ));
+      });
+  };
+
   return (
     <main>
       <NewPlantForm addPlant={addPlant} />
       <Search setSearchTerm={setSearchTerm} />
-      <PlantList plants={plants} searchTerm={searchTerm} toggleStock={toggleStock} deletePlant={deletePlant} />
+      <PlantList plants={plants} searchTerm={searchTerm} toggleStock={toggleStock} deletePlant={deletePlant} updatePlant={updatePlant} />
     </main>
   );
 }

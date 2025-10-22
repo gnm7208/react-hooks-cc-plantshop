@@ -3,7 +3,7 @@ import React from "react";
 import PlantCard from "./PlantCard";
 
 // Function component for the plant list
-function PlantList({ plants, searchTerm, toggleStock, deletePlant }) {
+function PlantList({ plants, searchTerm, toggleStock, deletePlant, updatePlant }) {
   // Filter plants based on search term
   const filteredPlants = plants.filter(plant =>
     plant.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -12,7 +12,7 @@ function PlantList({ plants, searchTerm, toggleStock, deletePlant }) {
   return (
     <ul className="cards">
       {filteredPlants.map(plant => (
-        <PlantCard key={plant.id} plant={plant} toggleStock={toggleStock} deletePlant={deletePlant} />
+        <PlantCard key={plant.id} plant={plant} toggleStock={toggleStock} deletePlant={deletePlant} updatePlant={updatePlant} />
       ))}
     </ul>
   );
